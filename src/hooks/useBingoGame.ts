@@ -96,7 +96,7 @@ function loadGameState(): Pick<BingoGameState, 'gameState' | 'board' | 'winningL
       return null;
     }
 
-    const parsed = JSON.parse(saved);
+    const parsed: unknown = JSON.parse(saved);
     
     if (validateStoredData(parsed)) {
       return {
